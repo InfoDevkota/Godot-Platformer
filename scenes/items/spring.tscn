@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp77ats5k405v"]
+
+[ext_resource type="Script" path="res://scenes/items/spring.gd" id="1_3hxpj"]
+[ext_resource type="Texture2D" uid="uid://bvyealwgs08g8" path="res://assets/kenney_platformer-pack-redux/PNG/Tiles/spring.png" id="1_8ffw2"]
+[ext_resource type="Texture2D" uid="uid://bbhy5dgchfx7f" path="res://assets/kenney_platformer-pack-redux/PNG/Tiles/sprung.png" id="2_4ekqe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr2pt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8ffw2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ekqe")
+}],
+"loop": false,
+"name": &"lunch",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqajd"]
+size = Vector2(112, 74)
+
+[node name="spring" type="Node2D"]
+script = ExtResource("1_3hxpj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nr2pt")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_wqajd")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

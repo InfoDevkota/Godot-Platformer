@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://boimdbvrm8b7h"]
+[gd_scene load_steps=8 format=3 uid="uid://boimdbvrm8b7h"]
 
 [ext_resource type="Texture2D" uid="uid://3t1546i5c3ji" path="res://assets/kenney_platformer-art-extended-tileset/PNG Grass/Spritesheet/sheet.png" id="1_gy8iu"]
 [ext_resource type="PackedScene" uid="uid://i5osbnnv3hlo" path="res://scenes/character/player.tscn" id="2_xra5m"]
 [ext_resource type="PackedScene" uid="uid://cqsvmcjymekbs" path="res://scenes/components/parallax_background.tscn" id="3_myf8c"]
+[ext_resource type="PackedScene" uid="uid://bp77ats5k405v" path="res://scenes/items/spring.tscn" id="5_oa7vs"]
 [ext_resource type="PackedScene" uid="uid://dfft5xv3kgjem" path="res://scenes/object/frog.tscn" id="5_smd0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_repyu"]
@@ -172,3 +173,6 @@ drag_vertical_enabled = true
 
 [node name="frog" parent="." instance=ExtResource("5_smd0m")]
 position = Vector2(826, 497)
+
+[node name="spring" parent="." instance=ExtResource("5_oa7vs")]
+position = Vector2(125, 497)
