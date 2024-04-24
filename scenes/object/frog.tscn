@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfft5xv3kgjem"]
+
+[ext_resource type="Texture2D" uid="uid://dvt3vwknn43f" path="res://assets/kenney_platformer-pack-redux/PNG/Enemies/frog.png" id="1_f6306"]
+[ext_resource type="Script" path="res://scenes/object/frog.gd" id="1_gpdnu"]
+[ext_resource type="Texture2D" uid="uid://by54yc753padv" path="res://assets/kenney_platformer-pack-redux/PNG/Enemies/frog_move.png" id="2_ypxel"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o0x8k"]
+radius = 289.002
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e3s2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f6306")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ypxel")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[node name="frog" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_gpdnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o0x8k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e3s2n")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

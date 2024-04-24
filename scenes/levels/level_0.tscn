@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://boimdbvrm8b7h"]
+[gd_scene load_steps=8 format=3 uid="uid://boimdbvrm8b7h"]
 
 [ext_resource type="Texture2D" uid="uid://3t1546i5c3ji" path="res://assets/kenney_platformer-art-extended-tileset/PNG Grass/Spritesheet/sheet.png" id="1_gy8iu"]
 [ext_resource type="PackedScene" uid="uid://i5osbnnv3hlo" path="res://scenes/character/player.tscn" id="2_xra5m"]
 [ext_resource type="Texture2D" uid="uid://ddwfhl5vvk07v" path="res://assets/kenney_background-elements-redux/Backgrounds/Elements/cloudLayer1.png" id="3_0maga"]
 [ext_resource type="Texture2D" uid="uid://cpkaps4hu4jcs" path="res://assets/kenney_background-elements-redux/Backgrounds/Elements/mountains.png" id="4_gwbi2"]
+[ext_resource type="PackedScene" uid="uid://dfft5xv3kgjem" path="res://scenes/object/frog.tscn" id="5_smd0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_repyu"]
 texture = ExtResource("1_gy8iu")
@@ -155,7 +156,7 @@ sources/0 = SubResource("TileSetAtlasSource_repyu")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sttlc")
 format = 2
-layer_0/tile_data = PackedInt32Array(524289, 262144, 4, 524290, 262144, 3, 524291, 262144, 3, 524292, 262144, 3, 524293, 262144, 3, 524294, 262144, 3, 524295, 262144, 3, 524296, 262144, 2, 524299, 262144, 4, 524300, 262144, 3, 524301, 262144, 3, 524302, 262144, 3, 524303, 262144, 3, 524304, 262144, 3, 524305, 262144, 3, 524306, 262144, 3, 524307, 262144, 3, 524308, 262144, 3, 524309, 262144, 3, 524310, 262144, 2, 131082, 262144, 4, 131083, 262144, 3, 131084, 262144, 2, 6, 262144, 4, 7, 262144, 3, 8, 262144, 2, 393235, 262144, 4, 393236, 262144, 3, 393237, 262144, 2, 262167, 262144, 4, 262168, 262144, 3, 262169, 262144, 2)
+layer_0/tile_data = PackedInt32Array(524289, 262144, 4, 524290, 262144, 3, 524291, 262144, 3, 524292, 262144, 3, 524293, 262144, 3, 524294, 262144, 3, 524295, 262144, 3, 524296, 262144, 3, 524299, 262144, 3, 524300, 262144, 3, 524301, 262144, 3, 524302, 262144, 3, 524303, 262144, 3, 524304, 262144, 3, 524305, 262144, 3, 524306, 262144, 3, 524307, 262144, 3, 524308, 262144, 3, 524309, 262144, 3, 524310, 262144, 2, 131082, 262144, 4, 131083, 262144, 3, 131084, 262144, 2, 6, 262144, 4, 7, 262144, 3, 8, 262144, 2, 393235, 262144, 4, 393236, 262144, 3, 393237, 262144, 2, 262167, 262144, 4, 262168, 262144, 3, 262169, 262144, 2, 524297, 262144, 3, 524298, 262144, 3)
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("2_xra5m")]
 position = Vector2(294, 467)
@@ -187,3 +188,6 @@ motion_mirroring = Vector2(1024, 0)
 [node name="CloudLayer1" type="Sprite2D" parent="ParallaxBackground/Cloud2"]
 position = Vector2(513, 351)
 texture = ExtResource("4_gwbi2")
+
+[node name="frog" parent="." instance=ExtResource("5_smd0m")]
+position = Vector2(826, 497)
