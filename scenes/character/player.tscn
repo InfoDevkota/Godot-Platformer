@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://i5osbnnv3hlo"]
+
+[ext_resource type="Texture2D" uid="uid://bptt7udhcd4gf" path="res://assets/kenney_platformer-pack-redux/PNG/Players/128x256/Green/alienGreen_stand.png" id="1_b1j5b"]
+[ext_resource type="Script" path="res://scenes/character/player.gd" id="1_qaiaj"]
+[ext_resource type="Texture2D" uid="uid://3vyqqr70d63v" path="res://assets/kenney_platformer-pack-redux/PNG/Players/128x256/Green/alienGreen_front.png" id="2_gqbi6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0o0sn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b1j5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gqbi6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sem7t"]
+size = Vector2(80, 145)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_qaiaj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -128)
+sprite_frames = SubResource("SpriteFrames_0o0sn")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6187
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -73.5)
+shape = SubResource("RectangleShape2D_sem7t")
