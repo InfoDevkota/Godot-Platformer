@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqsvmcjymekbs"]
+
+[ext_resource type="Texture2D" uid="uid://ddwfhl5vvk07v" path="res://assets/kenney_background-elements-redux/Backgrounds/Elements/cloudLayer1.png" id="1_4jmsk"]
+[ext_resource type="Script" path="res://scenes/components/parallax_background.gd" id="1_xrt8x"]
+[ext_resource type="Texture2D" uid="uid://cpkaps4hu4jcs" path="res://assets/kenney_background-elements-redux/Backgrounds/Elements/mountains.png" id="2_gf445"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_xrt8x")
+
+[node name="Cloud" type="ParallaxLayer" parent="."]
+position = Vector2(0, 48)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="CloudLayer1" type="Sprite2D" parent="Cloud"]
+position = Vector2(513, 199)
+texture = ExtResource("1_4jmsk")
+
+[node name="mountains" type="ParallaxLayer" parent="."]
+position = Vector2(0, 48)
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="CloudLayer1" type="Sprite2D" parent="mountains"]
+position = Vector2(513, 351)
+texture = ExtResource("2_gf445")

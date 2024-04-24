@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://boimdbvrm8b7h"]
+[gd_scene load_steps=7 format=3 uid="uid://boimdbvrm8b7h"]
 
 [ext_resource type="Texture2D" uid="uid://3t1546i5c3ji" path="res://assets/kenney_platformer-art-extended-tileset/PNG Grass/Spritesheet/sheet.png" id="1_gy8iu"]
 [ext_resource type="PackedScene" uid="uid://i5osbnnv3hlo" path="res://scenes/character/player.tscn" id="2_xra5m"]
-[ext_resource type="Texture2D" uid="uid://ddwfhl5vvk07v" path="res://assets/kenney_background-elements-redux/Backgrounds/Elements/cloudLayer1.png" id="3_0maga"]
-[ext_resource type="Texture2D" uid="uid://cpkaps4hu4jcs" path="res://assets/kenney_background-elements-redux/Backgrounds/Elements/mountains.png" id="4_gwbi2"]
+[ext_resource type="PackedScene" uid="uid://cqsvmcjymekbs" path="res://scenes/components/parallax_background.tscn" id="3_myf8c"]
 [ext_resource type="PackedScene" uid="uid://dfft5xv3kgjem" path="res://scenes/object/frog.tscn" id="5_smd0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_repyu"]
@@ -169,25 +168,7 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Cloud" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, 48)
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(1024, 0)
-
-[node name="CloudLayer1" type="Sprite2D" parent="ParallaxBackground/Cloud"]
-position = Vector2(513, 199)
-texture = ExtResource("3_0maga")
-
-[node name="Cloud2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, 48)
-motion_scale = Vector2(0.8, 0.8)
-motion_mirroring = Vector2(1024, 0)
-
-[node name="CloudLayer1" type="Sprite2D" parent="ParallaxBackground/Cloud2"]
-position = Vector2(513, 351)
-texture = ExtResource("4_gwbi2")
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_myf8c")]
 
 [node name="frog" parent="." instance=ExtResource("5_smd0m")]
 position = Vector2(826, 497)

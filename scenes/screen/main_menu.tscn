@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpq272wfqrqsj"]
+[gd_scene load_steps=3 format=3 uid="uid://bpq272wfqrqsj"]
 
 [ext_resource type="Script" path="res://scenes/screen/main_menu.gd" id="1_dsitv"]
+[ext_resource type="PackedScene" uid="uid://cqsvmcjymekbs" path="res://scenes/components/parallax_background.tscn" id="2_to0qx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,5 +26,8 @@ offset_bottom = 47.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Level 0"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_to0qx")]
+auto_move = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
