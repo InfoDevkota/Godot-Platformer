@@ -55,12 +55,14 @@ func high_jump():
 	velocity.y = JUMP_VELOCITY * 2
 	
 func hit(direction):
-	print("direction", direction)
-	
 	is_hit = true
 	velocity.y = JUMP_VELOCITY
 	velocity.x = direction * SPEED
 	
 	move_and_slide()
 	
+	pass
+
+func coin_collected(number=1):
+	print("coin collected")
 	pass
