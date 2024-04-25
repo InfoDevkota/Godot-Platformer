@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://boimdbvrm8b7h"]
+[gd_scene load_steps=11 format=3 uid="uid://boimdbvrm8b7h"]
 
 [ext_resource type="Texture2D" uid="uid://3t1546i5c3ji" path="res://assets/kenney_platformer-art-extended-tileset/PNG Grass/Spritesheet/sheet.png" id="1_gy8iu"]
 [ext_resource type="PackedScene" uid="uid://i5osbnnv3hlo" path="res://scenes/character/player.tscn" id="2_xra5m"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bp77ats5k405v" path="res://scenes/items/spring.tscn" id="5_oa7vs"]
 [ext_resource type="PackedScene" uid="uid://dfft5xv3kgjem" path="res://scenes/object/frog.tscn" id="5_smd0m"]
 [ext_resource type="PackedScene" uid="uid://bfny1naygr1q7" path="res://scenes/items/saw.tscn" id="6_w6len"]
+[ext_resource type="PackedScene" uid="uid://rkiaerf36ne3" path="res://scenes/items/spike.tscn" id="7_bnhgf"]
+[ext_resource type="PackedScene" uid="uid://b6l6ue27sckqq" path="res://scenes/object/slime.tscn" id="7_d2nuj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_repyu"]
 texture = ExtResource("1_gy8iu")
@@ -157,7 +159,7 @@ sources/0 = SubResource("TileSetAtlasSource_repyu")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sttlc")
 format = 2
-layer_0/tile_data = PackedInt32Array(524289, 262144, 4, 524290, 262144, 3, 524291, 262144, 3, 524292, 262144, 3, 524293, 262144, 3, 524294, 262144, 3, 524295, 262144, 3, 524296, 262144, 3, 524299, 262144, 3, 524300, 262144, 3, 524301, 262144, 3, 524302, 262144, 3, 524303, 262144, 3, 524304, 262144, 3, 524305, 262144, 3, 524306, 262144, 3, 524307, 262144, 3, 524308, 262144, 3, 524309, 262144, 3, 524310, 262144, 2, 131082, 262144, 4, 131083, 262144, 3, 131084, 262144, 2, 6, 262144, 4, 7, 262144, 3, 8, 262144, 2, 393235, 262144, 4, 393236, 262144, 3, 393237, 262144, 2, 262167, 262144, 4, 262168, 262144, 3, 262169, 262144, 2, 524297, 262144, 3, 524298, 262144, 3, 524311, 262144, 3, 524312, 262144, 3, 524313, 262144, 3, 524314, 262144, 3, 524315, 262144, 3, 524316, 262144, 3, 524317, 262144, 3, 524318, 262144, 3, 524319, 262144, 3, 524320, 262144, 3, 524321, 262144, 3, 524322, 262144, 3, 524323, 262144, 3, 524324, 262144, 3, 524325, 262144, 3, 524326, 262144, 3, 524327, 262144, 3, 524329, 262144, 3, 524328, 262144, 3, 524330, 262144, 3, 524331, 262144, 3, 524332, 262144, 3, 524333, 262144, 3, 524334, 262144, 3, 524335, 262144, 3, 524336, 262144, 2)
+layer_0/tile_data = PackedInt32Array(524289, 262144, 4, 524290, 262144, 3, 524291, 262144, 3, 524292, 262144, 3, 524293, 262144, 3, 524294, 262144, 3, 524295, 262144, 3, 524296, 262144, 3, 524299, 262144, 3, 524300, 262144, 3, 524301, 262144, 3, 524302, 262144, 3, 524303, 262144, 3, 524304, 262144, 3, 524305, 262144, 3, 524306, 262144, 3, 524307, 262144, 3, 524308, 262144, 3, 524309, 262144, 3, 524310, 262144, 2, 131082, 262144, 4, 131083, 262144, 3, 131084, 262144, 2, 6, 262144, 4, 7, 262144, 3, 8, 262144, 2, 393235, 262144, 4, 393236, 262144, 3, 393237, 262144, 2, 262167, 262144, 4, 262168, 262144, 3, 262169, 262144, 2, 524297, 262144, 3, 524298, 262144, 3, 524311, 262144, 3, 524312, 262144, 3, 524313, 262144, 3, 524314, 262144, 3, 524315, 262144, 3, 524316, 262144, 3, 524317, 262144, 3, 524318, 262144, 3, 524319, 262144, 3, 524320, 262144, 3, 524321, 262144, 3, 524322, 262144, 3, 524323, 262144, 3, 524324, 262144, 3, 524325, 262144, 3, 524326, 262144, 3, 524327, 262144, 3, 524329, 262144, 3, 524328, 262144, 3, 524330, 262144, 3, 524331, 262144, 3, 524332, 262144, 3, 524333, 262144, 3, 524334, 262144, 3, 524335, 262144, 3, 524336, 262144, 2, 393245, 262144, 1)
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("2_xra5m")]
 position = Vector2(2225, 453)
@@ -180,4 +182,13 @@ position = Vector2(826, 497)
 position = Vector2(125, 497)
 
 [node name="saw" parent="." instance=ExtResource("6_w6len")]
-position = Vector2(1984, 480)
+position = Vector2(1984, 497)
+
+[node name="spike" parent="." instance=ExtResource("7_bnhgf")]
+position = Vector2(2877, 497)
+
+[node name="slime" parent="." instance=ExtResource("7_d2nuj")]
+position = Vector2(2565, 497)
+SPEED = 60
+MAX_LEFT = 80
+MAX_RIGHT = 80

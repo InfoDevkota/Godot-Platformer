@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6l6ue27sckqq"]
+
+[ext_resource type="Script" path="res://scenes/object/slime.gd" id="1_s5wan"]
+[ext_resource type="Texture2D" uid="uid://b7sx3n2k2gsra" path="res://assets/kenney_platformer-pack-redux/PNG/Enemies/slimePurple.png" id="1_se4cf"]
+[ext_resource type="Texture2D" uid="uid://dp1b7ylslvfwj" path="res://assets/kenney_platformer-pack-redux/PNG/Enemies/slimePurple_move.png" id="2_mtc7t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2gyy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_se4cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mtc7t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="slime" type="Node2D"]
+script = ExtResource("1_s5wan")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2gyy4")
+autoplay = "default"
