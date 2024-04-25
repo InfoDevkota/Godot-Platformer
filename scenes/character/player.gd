@@ -30,3 +30,6 @@ func _physics_process(delta):
 func high_jump():
 	velocity.y = JUMP_VELOCITY * 2
 	
+func hit(direction):
+	print("direction", direction)
+	pass
