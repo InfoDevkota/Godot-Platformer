@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://boimdbvrm8b7h"]
+[gd_scene load_steps=13 format=3 uid="uid://boimdbvrm8b7h"]
 
 [ext_resource type="Texture2D" uid="uid://3t1546i5c3ji" path="res://assets/kenney_platformer-art-extended-tileset/PNG Grass/Spritesheet/sheet.png" id="1_gy8iu"]
 [ext_resource type="PackedScene" uid="uid://i5osbnnv3hlo" path="res://scenes/character/player.tscn" id="2_xra5m"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://rkiaerf36ne3" path="res://scenes/items/spike.tscn" id="7_bnhgf"]
 [ext_resource type="PackedScene" uid="uid://b6l6ue27sckqq" path="res://scenes/object/slime.tscn" id="7_d2nuj"]
 [ext_resource type="PackedScene" uid="uid://bodd2kaa78b6i" path="res://scenes/items/coin.tscn" id="8_afmsi"]
+[ext_resource type="PackedScene" uid="uid://bxk8dgw5pvhbg" path="res://scenes/control_canvas_layer.tscn" id="10_jpvj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_repyu"]
 texture = ExtResource("1_gy8iu")
@@ -196,3 +197,5 @@ position = Vector2(2565, 497)
 SPEED = 60
 MAX_LEFT = 80
 MAX_RIGHT = 80
+
+[node name="ControlCanvasLayer" parent="." instance=ExtResource("10_jpvj1")]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxk8dgw5pvhbg"]
+
+[ext_resource type="Script" path="res://scenes/control_canvas_layer.gd" id="1_beqa6"]
+[ext_resource type="Texture2D" uid="uid://dn70y2smfl2ll" path="res://assets/kenney_onscreen-controls/edited/g112-3.png" id="1_nkwyd"]
+[ext_resource type="Texture2D" uid="uid://duc3kepikboox" path="res://assets/kenney_onscreen-controls/edited/g134-3.png" id="2_cv1ew"]
+[ext_resource type="Texture2D" uid="uid://bplru46ct8fr8" path="res://assets/kenney_onscreen-controls/edited/g113-7.png" id="3_mherl"]
+[ext_resource type="Texture2D" uid="uid://bvbuj3eih3l4i" path="res://assets/kenney_onscreen-controls/edited/g135-7.png" id="4_2448o"]
+[ext_resource type="Texture2D" uid="uid://dohdevdehr0iq" path="res://assets/kenney_onscreen-controls/edited/g114-3.png" id="5_n12kl"]
+[ext_resource type="Texture2D" uid="uid://cb5r2fdft1r8b" path="res://assets/kenney_onscreen-controls/edited/g136-3.png" id="6_j06x7"]
+
+[node name="ControlCanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_beqa6")
+
+[node name="LeftRight" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -232.0
+offset_right = 104.0
+offset_bottom = -192.0
+grow_vertical = 0
+
+[node name="TouchScreenLeft" type="TouchScreenButton" parent="LeftRight"]
+texture_normal = ExtResource("1_nkwyd")
+texture_pressed = ExtResource("2_cv1ew")
+action = "left"
+
+[node name="TouchScreenRight" type="TouchScreenButton" parent="LeftRight"]
+position = Vector2(216, 0)
+texture_normal = ExtResource("3_mherl")
+texture_pressed = ExtResource("4_2448o")
+action = "right"
+
+[node name="Jump" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -224.0
+offset_top = -232.0
+offset_right = -184.0
+offset_bottom = -192.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenJump" type="TouchScreenButton" parent="Jump"]
+texture_normal = ExtResource("5_n12kl")
+texture_pressed = ExtResource("6_j06x7")
+action = "jump"
