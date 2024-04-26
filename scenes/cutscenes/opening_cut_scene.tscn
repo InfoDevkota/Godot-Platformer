@@ -1,0 +1,680 @@
+[gd_scene load_steps=24 format=3 uid="uid://cxxejey81nunc"]
+
+[ext_resource type="Texture2D" uid="uid://cv403ah2wjlgw" path="res://assets/other-downloaded/back.png" id="1_muqom"]
+[ext_resource type="Texture2D" uid="uid://dnor623htw68f" path="res://assets/kenney_space-shooter-extension/PNG/Sprites/Station/spaceStation_024.png" id="1_nempf"]
+[ext_resource type="Script" path="res://scenes/cutscenes/opening_cut_scene.gd" id="1_vye3d"]
+[ext_resource type="Texture2D" uid="uid://dq7kae7u03x3m" path="res://assets/kenney_platformer-pack-redux/PNG/HUD/hudPlayer_green.png" id="2_08ced"]
+[ext_resource type="Texture2D" uid="uid://cppfus488wsbo" path="res://assets/kenney_platformer-pack-redux/PNG/HUD/hudPlayer_blue.png" id="2_qakdo"]
+[ext_resource type="Texture2D" uid="uid://dwnmhvk5cybma" path="res://assets/kenney_space-shooter-extension/PNG/Sprites/Station/spaceStation_030.png" id="4_xntth"]
+[ext_resource type="Texture2D" uid="uid://bm8wofax6ygrt" path="res://assets/kenney_planets/Planets/planet03.png" id="5_66s4q"]
+[ext_resource type="AudioStream" uid="uid://c4l1veyob3qn8" path="res://assets/audio/cutscene/cut-scene-opening-2.ogg" id="7_n1c21"]
+[ext_resource type="AudioStream" uid="uid://blahtxr7lvva4" path="res://assets/audio/cutscene/cut-scene-opening-1.ogg" id="8_bypxx"]
+[ext_resource type="AudioStream" uid="uid://bkbbri5cgx7ym" path="res://assets/audio/cutscene/cut-scene-opening-3.ogg" id="8_j5xsk"]
+[ext_resource type="AudioStream" uid="uid://chirtsv335ais" path="res://assets/audio/cutscene/cut-scene-opening-4.ogg" id="9_fvhil"]
+[ext_resource type="AudioStream" uid="uid://cbnea7xry0e5j" path="res://assets/audio/cutscene/cut-scene-opening-5.ogg" id="10_4axi0"]
+[ext_resource type="AudioStream" uid="uid://c7n6vwen2j0u7" path="res://assets/audio/cutscene/cut-scene-opening-6.ogg" id="11_wqdes"]
+[ext_resource type="AudioStream" uid="uid://bsyc1uy4leebo" path="res://assets/audio/cutscene/cut-scene-opening-7.ogg" id="12_2htau"]
+[ext_resource type="AudioStream" uid="uid://djpvg1qug4xln" path="res://assets/audio/downloaded/radio-illuminati-nuclear-alarm-124010.mp3" id="12_o7rjj"]
+[ext_resource type="AudioStream" uid="uid://p8xnw5grsyuj" path="res://assets/audio/downloaded/morse-sos-93449.mp3" id="13_lca4q"]
+[ext_resource type="AudioStream" uid="uid://dnf7whlkdh7uo" path="res://assets/audio/downloaded/spacesound-7547.mp3" id="15_w34k1"]
+
+[sub_resource type="Animation" id="Animation_88ueo"]
+resource_name = "space"
+length = 40.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpaceShip:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 12.6, 30.7, 34.7, 35.6, 37.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-2.09789, -1.5708, -1.5708, -2.12756, -1.74533, -0.783653, -0.338594]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpaceShip:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 12.6, 30.7, 34.7, 35.6, 37.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1014, -178), Vector2(468, 62), Vector2(468, 62), Vector2(364, 174), Vector2(196, 238), Vector2(146, 233), Vector2(117, 205)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpaceShip:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10, 12.6, 30.7, 34.7, 35.6, 37.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1, 1), Vector2(1, 1), Vector2(0.3, 0.3), Vector2(0.1, 0.1), Vector2(0.05, 0.05), Vector2(0.001, 0.001)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpeakerSpeech:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Speaker:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 6.8, 7.3, 12.5, 13.5, 27.3, 27.8, 31.3, 34.7, 38.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SpeakerSpeech:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 5.9, 6.8, 7.3, 11.4, 12.5, 13.5, 18.3, 18.8, 19.3, 22.8, 23.3, 23.8, 26.8, 27.3, 27.8, 30.8, 31.3, 34.7, 37.7, 38.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SpeakerSpeech:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 6.8, 7.3, 12.5, 13.5, 18.8, 19.3, 23.3, 23.8, 27.3, 27.8, 31.3, 34.7, 38.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["The quantum flux readings from sector 7 are fascinating. It seems to correlate with our earlier hypothesis on subspace anomalies.", "", "Indeed. If we can collect more data, it might provide insights into the nature of interstellar phenomena.", "", "Something's wrong. Our sensors are detecting a sudden surge in radiation levels.", "", "This is unexpected. We must notify the mothership immediately.", "", "Agreed. I'll send the distress signal right away.", "", "Let's try to land in a nearest planet.", "", "The ship is out of control !! The ship is out of control !!!", ""]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Speaker:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.5, 7.3, 13.5, 19.3, 23.8, 27.8, 34.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_08ced"), ExtResource("2_qakdo"), ExtResource("2_08ced"), ExtResource("2_qakdo"), ExtResource("2_08ced"), ExtResource("2_qakdo"), ExtResource("2_08ced")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SpaceShip/PointLight2D:enabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Earth:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 8.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Earth:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(9, 15.1, 30.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.001, 0.001), Vector2(0.01, 0.01), Vector2(0.4, 0.4)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Earth:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(9, 15.1, 30.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-682, -108), Vector2(-599, -142), Vector2(-192, -290)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("VoiceAudioStreamPlayer:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.6, 6.8, 7.4, 12.5, 13.6, 18.8, 19.4, 23.3, 23.9, 27.3, 27.9, 31.3, 34.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true, false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("VoiceAudioStreamPlayer:stream")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.5, 7.3, 13.5, 19.3, 23.8, 27.8, 34.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_bypxx"), ExtResource("7_n1c21"), ExtResource("8_j5xsk"), ExtResource("9_fvhil"), ExtResource("10_4axi0"), ExtResource("11_wqdes"), ExtResource("12_2htau")]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("SignalAudioStreamPlayer:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(27.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("SignalAudioStreamPlayer:stream")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(27),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_lca4q")]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("ErrorAudioStreamPlayer:stream")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(13.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_o7rjj")]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("ErrorAudioStreamPlayer:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(13.7, 38.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("ErrorAudioStreamPlayer:volume_db")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(15, 37.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-25.0, -35.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("BlinkAnimationPlayer:current_animation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 13.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"[stop]", "blink"]
+}
+
+[sub_resource type="Animation" id="Animation_cuij5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpaceShip:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-2.09789]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpaceShip:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1014, -178)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpaceShip:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpeakerSpeech:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Speaker:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SpeakerSpeech:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SpeakerSpeech:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Speaker:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_qakdo")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SpaceShip/PointLight2D:enabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Earth:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Earth:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Earth:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-599, -142)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("VoiceAudioStreamPlayer:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("VoiceAudioStreamPlayer:stream")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_bypxx")]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("SignalAudioStreamPlayer:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("SignalAudioStreamPlayer:stream")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_lca4q")]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("ErrorAudioStreamPlayer:stream")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_o7rjj")]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("ErrorAudioStreamPlayer:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("ErrorAudioStreamPlayer:volume_db")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-25.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0nqac"]
+_data = {
+"RESET": SubResource("Animation_cuij5"),
+"space": SubResource("Animation_88ueo")
+}
+
+[sub_resource type="Animation" id="Animation_py8gp"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpaceShip/PointLight2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpaceShip/PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5c414"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpaceShip/PointLight2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpaceShip/PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_incli"]
+_data = {
+"RESET": SubResource("Animation_5c414"),
+"blink": SubResource("Animation_py8gp")
+}
+
+[node name="OpeningCutScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vye3d")
+
+[node name="Earth" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -599.0
+offset_top = -142.0
+offset_right = 681.0
+offset_bottom = 1138.0
+scale = Vector2(0.01, 0.01)
+pivot_offset = Vector2(640, 640)
+texture = ExtResource("5_66s4q")
+
+[node name="SpaceShip" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1014.0
+offset_top = -178.0
+offset_right = 1290.0
+offset_bottom = 222.0
+rotation = -2.09789
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(138, 200)
+texture = ExtResource("1_nempf")
+
+[node name="PointLight2D" type="PointLight2D" parent="SpaceShip"]
+visible = false
+position = Vector2(142, 17)
+enabled = false
+color = Color(1, 0, 0, 1)
+texture = ExtResource("4_xntth")
+
+[node name="SpeakerSpeech" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_top = -101.0
+offset_right = -144.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Speaker" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_right = 128.0
+grow_vertical = 0
+texture = ExtResource("2_qakdo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0nqac")
+}
+autoplay = "space"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.229185, 0.226692, 0.219917, 1)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2048, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 2048.0
+offset_bottom = 1536.0
+texture = ExtResource("1_muqom")
+
+[node name="VoiceAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bypxx")
+
+[node name="SignalAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_lca4q")
+
+[node name="ErrorAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_o7rjj")
+volume_db = -25.0
+
+[node name="SpaceAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_w34k1")
+autoplay = true
+
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_incli")
+}
+autoplay = "RESET"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Five Astronauts exploring in a spaceship"
+horizontal_alignment = 1
