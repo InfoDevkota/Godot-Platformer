@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 
+[editor]
+
+movie_writer/movie_file="/mnt/programming/new-games/godot-platformer/movie/cutscene.avi"
+
 [input]
 
 jump={

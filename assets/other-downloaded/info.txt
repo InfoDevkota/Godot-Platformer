@@ -1,1 +1,3 @@
 back.png -> https://opengameart.org/content/space-background-1
+
+effects -> https://opengameart.org/content/lots-of-game-effects

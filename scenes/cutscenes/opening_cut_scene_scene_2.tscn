@@ -1,0 +1,145 @@
+[gd_scene load_steps=6 format=3 uid="uid://jcouk3xw8ntk"]
+
+[ext_resource type="Texture2D" uid="uid://0okqy1xv2xy6" path="res://assets/created/eye-blink-effect.png" id="1_k12tm"]
+[ext_resource type="PackedScene" uid="uid://boimdbvrm8b7h" path="res://scenes/levels/level_0.tscn" id="2_f31us"]
+
+[sub_resource type="Animation" id="Animation_1ajds"]
+resource_name = "start"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/EyeLidUp:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-83, -2), Vector2(-83, -202), Vector2(-83, -2), Vector2(-83, -202), Vector2(-83, -802)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/EyeLidDown:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-83, 10), Vector2(-83, 210), Vector2(-83, 10), Vector2(-83, 210), Vector2(-83, 810)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.392157), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vfc5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/EyeLidUp:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-83, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/EyeLidDown:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-83, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.392157)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_12mqe"]
+_data = {
+"RESET": SubResource("Animation_vfc5f"),
+"start": SubResource("Animation_1ajds")
+}
+
+[node name="OpeningCutScene_Scene2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="level0" parent="." instance=ExtResource("2_f31us")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 50
+
+[node name="EyeLidUp" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.0
+offset_top = -2.0
+offset_right = 1279.0
+offset_bottom = 730.0
+grow_horizontal = 2
+texture = ExtResource("1_k12tm")
+
+[node name="EyeLidDown" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.0
+offset_top = 10.0
+offset_right = 1279.0
+offset_bottom = 742.0
+grow_horizontal = 2
+texture = ExtResource("1_k12tm")
+flip_v = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_12mqe")
+}
+autoplay = "start"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1856.0
+offset_bottom = 768.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -671.0
+offset_right = -0.5
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 0
