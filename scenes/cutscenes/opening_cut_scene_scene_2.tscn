@@ -1,7 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://jcouk3xw8ntk"]
+[gd_scene load_steps=10 format=3 uid="uid://jcouk3xw8ntk"]
 
 [ext_resource type="Texture2D" uid="uid://0okqy1xv2xy6" path="res://assets/created/eye-blink-effect.png" id="1_k12tm"]
-[ext_resource type="PackedScene" uid="uid://boimdbvrm8b7h" path="res://scenes/levels/level_0.tscn" id="2_f31us"]
+[ext_resource type="PackedScene" uid="uid://c76dbg1t6mhfy" path="res://scenes/levels/level_opening_cutscene.tscn" id="1_s4b5o"]
+[ext_resource type="Texture2D" uid="uid://dq7kae7u03x3m" path="res://assets/kenney_platformer-pack-redux/PNG/HUD/hudPlayer_green.png" id="3_bjysa"]
+
+[sub_resource type="Animation" id="Animation_vfc5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/EyeLidUp:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-83, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/EyeLidDown:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-83, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.392157)]
+}
 
 [sub_resource type="Animation" id="Animation_1ajds"]
 resource_name = "start"
@@ -43,59 +83,167 @@ tracks/2/keys = {
 "values": [Color(0, 0, 0, 0.392157), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_vfc5f"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/EyeLidUp:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-83, -2)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/EyeLidDown:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-83, 10)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/ColorRect:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.392157)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_12mqe"]
 _data = {
 "RESET": SubResource("Animation_vfc5f"),
 "start": SubResource("Animation_1ajds")
 }
 
+[sub_resource type="Animation" id="Animation_dfoik"]
+resource_name = "start"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer2/SpeakerSpeech:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 3.1, 5, 8, 8.1, 10.3, 10.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Where..", "Where..., Where am I?", "", "Thanks God, I survived. ", "", "Oh No, the space ship, the parts are scrattered, and on Fire.", "", "I should explore the terrain and find my firends first."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer2/SpeakerSpeech:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.3, 2.6, 3.1, 5, 7.5, 8, 8.1, 9.8, 10.3, 10.4, 12.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.313, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer2/Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer2/SpeakerSpeech:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer2/Speaker:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("level_opening_cutscene")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_the_animation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_cury6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer2/SpeakerSpeech:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer2/SpeakerSpeech:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer2/Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer2/SpeakerSpeech:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer2/Speaker:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ca2b"]
+_data = {
+"RESET": SubResource("Animation_cury6"),
+"start": SubResource("Animation_dfoik")
+}
+
 [node name="OpeningCutScene_Scene2" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="level0" parent="." instance=ExtResource("2_f31us")]
+[node name="level_opening_cutscene" parent="." instance=ExtResource("1_s4b5o")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 50
+layer = 30
 
 [node name="EyeLidUp" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 5
@@ -143,3 +291,48 @@ offset_right = -0.5
 offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 31
+
+[node name="Panel" type="Panel" parent="CanvasLayer2"]
+visible = false
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 1006.0
+offset_bottom = 126.0
+
+[node name="SpeakerSpeech" type="Label" parent="CanvasLayer2"]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 170.0
+offset_top = -613.0
+offset_right = -121.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 0
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Speaker" type="TextureRect" parent="CanvasLayer2"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -640.0
+offset_right = 168.0
+offset_bottom = -512.0
+grow_vertical = 0
+texture = ExtResource("3_bjysa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6ca2b")
+}
+autoplay = "start"

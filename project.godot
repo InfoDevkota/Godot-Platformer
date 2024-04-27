@@ -22,7 +22,7 @@ window/stretch/aspect="keep_height"
 
 [editor]
 
-movie_writer/movie_file="/mnt/programming/new-games/godot-platformer/movie/cutscene.avi"
+movie_writer/movie_file="/mnt/programming/new-games/godot-platformer/movie/opening_cutscene.avi"
 
 [input]
 
