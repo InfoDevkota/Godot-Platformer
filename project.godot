@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Godot Platformer"
-run/main_scene="res://scenes/screen/main_menu.tscn"
+run/main_scene="res://scenes/screen/first_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Store="*res://scripts/store.gd"
 
 [display]
 

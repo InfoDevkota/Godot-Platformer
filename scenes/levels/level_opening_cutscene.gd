@@ -21,3 +21,8 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "start":
 		get_tree().change_scene_to_file("res://scenes/levels/level_0.tscn")
 	pass # Replace with function body.
+
+func set_cutscene_as_shown():
+	var data = Store.get_current_data()
+	data.opencutSceneShow = true;
+	Store.save_data(data)

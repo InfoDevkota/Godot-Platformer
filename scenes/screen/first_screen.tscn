@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwbsevgltu7yk"]
+
+[ext_resource type="Script" path="res://scenes/screen/first_screen.gd" id="1_e78ep"]
+
+[node name="FirstScreen" type="Node2D"]
+script = ExtResource("1_e78ep")
